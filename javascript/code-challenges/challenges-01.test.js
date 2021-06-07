@@ -9,6 +9,8 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
+
+
     const newArray = [];
 
     arr.forEach((value) => {
@@ -17,6 +19,7 @@ const addOne = (arr) => {
     });
 
     return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,6 +31,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
+
     const newArray = [];
 
     arr.forEach((value) => {
@@ -36,6 +40,7 @@ const addExclamation = (arr) => {
     });
 
     return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +52,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
+
     const newArray = [];
 
     arr.forEach((value) => {
@@ -56,6 +62,7 @@ const allUpperCase = (arr) => {
 
     return newArray;
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,6 +76,7 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
+
     return word.toUpperCase() + '!';
 };
 
@@ -78,6 +86,7 @@ const speaker = (words, callback) => {
         newArray.push(callback(value));
     });
     return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,6 +106,7 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
+
     arr.push(value);
 };
 
@@ -106,6 +116,7 @@ const addNumbers = (num, arr, times, callback) => {
         callback(newArray, num);
     }
     return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,6 +138,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
+
     const newArray = [];
     availableItems.forEach((item, i, arr) => {
         if (arr[i].available === true) {
@@ -136,6 +148,7 @@ const createList = (availableItems) => {
 
 
     return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,7 +166,9 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+
     // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,6 +183,7 @@ Run your tests from the console: jest challenges-01.test.js
 ------------------------------------------------------------------------------------------------ */
 
 describe('Testing challenge 1', () => {
+
     test('It should return an array with 1 added to each value of the original array', () => {
         expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
     });
@@ -215,3 +231,4 @@ xdescribe('Testing challenge 7', () => {
         expect(fizzbuzz(inputs).length).toStrictEqual(16);
     });
 });
+
