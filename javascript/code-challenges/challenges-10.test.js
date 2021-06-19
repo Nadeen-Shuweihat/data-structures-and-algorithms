@@ -8,8 +8,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  
-  return str.splice(Math.max(str.lengeth -10 , 0))
+  return str.split("").splice(str.length - 10);
+  // return str.splice(Math.max(str.length -10 , 0))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,7 +28,6 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
  let newArr = [].concat.apply([],matrix)
- 
   return (Math.max.apply(null,newArr));
 };
 
@@ -48,8 +47,25 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+
+  const arr = matrix.map((val) => val.reduce((a, b) => a + b, 0));
+  return arr.reduce((a, b) => a + b, 0);
+  // return (math.sum(matrix));
+
+  // return matrix.reduce((t, e) => t.concat(e)).reduce((t, e) => t + e)
+  
+  //   let sum = 0;
+  //   for (let i = 0 ; i <= matrix.length ; i++){
+  //     for (let n = 0 ; n <= matrix[i].length ; n++){
+  //       sum += matrix[i][n];
+  //     }
+  //   }
+  // return sum ;
 };
+
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +91,13 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  return hoursOpen.map((arr,index)=>{
+    let total = 0;
+    for (let i = 0; i < stores.length; i++) {
+      total += stores[i][index];
+    }
+    return total;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,7 +111,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let result = [];
+  hours.forEach((element,index) => {
+    result.push({sales: `${data[index]} cookies`, time: element});
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +140,17 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let result;
+  arr.forEach(element => {
+    if (element.store === 'Pet store') {
+      element.items.forEach(elem => {
+        if (elem.name === 'Treats') {
+          result = elem.quantity;
+        }
+      });
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
